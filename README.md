@@ -157,24 +157,24 @@
 
 <br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=ushan829&theme=dracula&row=1&column=7&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="Trophies" />
+<img src="https://github-profile-trophies.vercel.app/?username=ushan829&theme=dracula&row=1&column=7&margin-w=15&margin-h=15&no-bg=true&no-frame=true" alt="Trophies" />
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=ushan829&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&icon_color=ffffff&bg_color=0d1117" alt="GitHub Stats" width="48%" />
+<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=ushan829&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&icon_color=ffffff&bg_color=0d1117" alt="GitHub Stats" width="48%" />
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=ushan829&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&icon_color=ffffff&background=0d1117" alt="GitHub Streak" width="48%" />
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ushan829&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&bg_color=0d1117" alt="Top Languages" width="48%" />
+<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=ushan829&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&bg_color=0d1117" alt="Top Languages" width="48%" />
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=ushan829&theme=github-dark&hide_border=true&bg_color=00000000&color=8b949e&line=ffffff&point=ffffff" alt="Activity Graph" width="48%" />
 
 <br/><br/>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ushan829/ushan829/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ushan829/ushan829/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ushan829/ushan829/output/github-contribution-grid-snake.svg" width="800">
+  <source media="(prefers-color-scheme: dark)" srcset="https://ssr-contributions-svg.vercel.app/_/ushan829?chart=snake&format=svg&theme=github-dark">
+  <source media="(prefers-color-scheme: light)" srcset="https://ssr-contributions-svg.vercel.app/_/ushan829?chart=snake&format=svg&theme=github-light">
+  <img alt="github contribution grid snake animation" src="https://ssr-contributions-svg.vercel.app/_/ushan829?chart=snake&format=svg&theme=github-dark" width="800">
 </picture>
 
 <br/><br/>
