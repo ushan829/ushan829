@@ -10,10 +10,6 @@
 <p><em>"Building products that make education accessible for everyone."</em></p>
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=ushan829&label=PROFILE+VIEWS&style=for-the-badge&color=111111" alt="Visitor Counter" />
-
-<br/><br/>
-
 ---
 
 ### Profile Details
@@ -161,12 +157,12 @@
 
 <br/><br/>
 
-<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=ushan829&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&icon_color=ffffff&bg_color=0d1117" alt="GitHub Stats" width="48%" />
+<img src="https://github-readme-stats-anuraghazra1.vercel.app/api?username=ushan829&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&icon_color=ffffff&bg_color=0d1117" alt="GitHub Stats" width="48%" />
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=ushan829&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&icon_color=ffffff&background=0d1117" alt="GitHub Streak" width="48%" />
 
 <br/><br/>
 
-<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=ushan829&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&bg_color=0d1117" alt="Top Languages" width="48%" />
+<img src="https://github-readme-stats-anuraghazra1.vercel.app/api/top-langs/?username=ushan829&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=8b949e&bg_color=0d1117" alt="Top Languages" width="48%" />
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=ushan829&theme=github-dark&hide_border=true&bg_color=00000000&color=8b949e&line=ffffff&point=ffffff" alt="Activity Graph" width="48%" />
 
 <br/><br/>
@@ -271,6 +267,10 @@
 ---
 
 <br/>
+
+<img src="https://komarev.com/ghpvc/?username=ushan829&label=PROFILE+VIEWS&style=for-the-badge&color=111111" alt="Visitor Counter" />
+
+<br/><br/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Geist&weight=500&size=16&duration=4000&pause=1000&color=8B949E&center=true&vCenter=true&width=400&height=30&lines=Crafted+with+precision+by+Ushan+Nethsara" alt="Footer" />
 <br/>
