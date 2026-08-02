@@ -159,20 +159,16 @@
 
 <br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=ushan829&theme=flat&row=1&column=7&margin-w=8&margin-h=8&no-bg=true&no-frame=true" alt="Trophies" width="88%">
+<img src="https://streak-stats.demolab.com/?user=ushan829&theme=default&hide_border=true&background=ffffff&stroke=334155&ring=2563EB&fire=2563EB&currStreakLabel=2563EB&card_width=380" alt="GitHub Streak" width="60%">
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=ushan829&show_icons=true&theme=default&hide_border=true&hide_title=false&title_color=2563EB&text_color=334155&icon_color=2563EB&bg_color=ffffff&card_width=380" alt="GitHub Stats" width="48%">
-<img src="https://streak-stats.demolab.com/?user=ushan829&theme=default&hide_border=true&background=ffffff&stroke=334155&ring=2563EB&fire=2563EB&currStreakLabel=2563EB&card_width=380" alt="GitHub Streak" width="48%">
+<img src="https://img.shields.io/github/followers/ushan829?style=for-the-badge&label=Followers&color=2563EB&logo=github&logoColor=white" alt="Followers"/>
+<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fushan829&label=Public%20Repos&query=public_repos&style=for-the-badge&color=2563EB&logo=github&logoColor=white" alt="Public Repos"/>
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ushan829&layout=compact&theme=default&hide_border=true&title_color=2563EB&text_color=334155&bg_color=ffffff&card_width=380" alt="Top Languages" width="48%">
-
-<br/><br/>
-
-> **Note:** the streak card above previously pointed to `github-readme-streak-stats.herokuapp.com`, which Heroku's free-tier shutdown broke — that's why it (and anything hosted there) was rendering as a broken image. It now points to the actively maintained `streak-stats.demolab.com` instead. The activity graph and snake-animation widgets were removed for a cleaner, more minimalistic look — the snake widget in particular only renders once you set up its own GitHub Actions workflow in the `ushan829/ushan829` repo, so it isn't included here by default.
+> **Note:** the Trophy widget and the "GitHub Stats"/"Top Languages" cards were removed entirely. Every one of them depended on a third-party rendering service (`github-readme-stats.vercel.app`, which is officially paused by its maintainer, or a volunteer-run trophy mirror, which is inherently unreliable since it's someone's personal free-tier deployment) — that's an extra point of failure on top of GitHub itself. The two widgets left are chosen specifically because they don't have that problem: the streak card runs on `streak-stats.demolab.com` (actively maintained), and the badges are native `img.shields.io` badges that read straight from the GitHub API with no middleman. Fewer moving parts, and it fits the minimalistic direction better too. If a fuller stats card is wanted later, self-hosting `github-readme-stats` on your own free Vercel account removes the shared-instance risk entirely — happy to walk through that whenever.
 
 ---
 
