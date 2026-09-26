@@ -8,7 +8,7 @@ DATA section below and re-run:
     pip install fonttools brotli uharfbuzz
     python3 scripts/build_assets.py
 
-Fonts (Space Grotesk, JetBrains Mono, Inter, Noto Sans Sinhala - SIL OFL) and
+Fonts (Space Grotesk, JetBrains Mono, Inter - SIL OFL) and
 tech icons (tandpfun/skill-icons - MIT) are downloaded once into .cache/.
 Each SVG embeds only the glyphs it uses as base64 WOFF2, so the artwork looks
 identical on every device and never loads anything from the network.
@@ -21,7 +21,6 @@ import io
 import math
 import random
 import re
-import unicodedata
 import urllib.request
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -80,7 +79,7 @@ PROJECTS = [
         "stack": ["nextjs", "ts", "tailwind"],
         "stack_label": "Next.js · TypeScript · Tailwind",
         "status": "active",
-        "glyph": "letter",
+        "glyph": "book",
         "accent": ("#F59E0B", "#EC4899"),
     },
     {
@@ -165,7 +164,6 @@ FONT_FILES = {
     "SpaceGrotesk": "spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf",
     "JetBrainsMono": "jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf",
     "Inter": "inter/Inter%5Bopsz,wght%5D.ttf",
-    "NotoSansSinhala": "notosanssinhala/NotoSansSinhala%5Bwdth,wght%5D.ttf",
 }
 # css family -> (source font, axis location)
 FACES = {
@@ -175,7 +173,6 @@ FACES = {
     "jb6": ("JetBrainsMono", {"wght": 600}),
     "in4": ("Inter", {"wght": 400, "opsz": 14}),
     "in6": ("Inter", {"wght": 600, "opsz": 14}),
-    "si6": ("NotoSansSinhala", {"wght": 600, "wdth": 100}),
 }
 STACKS = {
     "sg7": "sg7,'Space Grotesk',system-ui,sans-serif",
@@ -184,7 +181,6 @@ STACKS = {
     "jb6": "jb6,'JetBrains Mono',ui-monospace,monospace",
     "in4": "in4,Inter,system-ui,sans-serif",
     "in6": "in6,Inter,system-ui,sans-serif",
-    "si6": "si6,'Noto Sans Sinhala','Iskoola Pota','Nirmala UI',sans-serif",
 }
 
 SKILL_ICONS = "https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/"
@@ -259,9 +255,7 @@ def font_face(face: str, chars: str) -> str:
     opts.hinting = False
     opts.notdef_outline = True
     sub = subset.Subsetter(opts)
-    # Split vowels (e.g. Sinhala ෝ) are shaped from their decomposed parts, so
-    # those code points must stay in the cmap too.
-    sub.populate(text=chars + unicodedata.normalize("NFD", chars))
+    sub.populate(text=chars)
     sub.subset(font)
     font.flavor = "woff2"
     buf = io.BytesIO()
@@ -553,14 +547,14 @@ def build_hero() -> None:
         )
 
     # --- left column -------------------------------------------------------
-    hello, hi = "ආයුබෝවන්", "Hello there, I'm"
-    w1 = measure(hello, "si6", 17)
+    hello, hi = "Hello, world", "I'm"
+    w1 = measure(hello, "in6", 16)
     w2 = measure(hi, "in4", 16)
     pw = 46 + w1 + 26 + w2 + 20
     s.add(
         f'<rect x="72" y="60" width="{n(pw)}" height="42" rx="21" fill="#0B1022" fill-opacity=".8" stroke="#fff" stroke-opacity=".14"/>',
         f'<circle cx="96" cy="81" r="5" fill="#34D399" class="pulse"/><circle cx="96" cy="81" r="5" fill="#34D399"/>',
-        s.text(114, 87, hello, "si6", 17, INK),
+        s.text(114, 86.5, hello, "in6", 16, INK),
         f'<circle cx="{n(114 + w1 + 13)}" cy="81" r="2" fill="{DIM}"/>',
         s.text(114 + w1 + 26, 86.5, hi, "in4", 16, MUTED),
     )
@@ -766,6 +760,8 @@ def build_toolkit() -> None:
 # --------------------------------------------------------------------------
 
 GLYPHS = {
+    "book": '<path d="M32 19c-6-4.5-13.5-5.5-21-4.5v31c7.5-1 15 0 21 4.5z" fill="#fff"/>'
+    '<path d="M32 19c6-4.5 13.5-5.5 21-4.5v31c-7.5-1-15 0-21 4.5z" fill="#fff" fill-opacity=".8"/>',
     "cap": '<path d="M32 14 60 26 32 38 4 26Z" fill="#fff"/><path d="M15 32v11c0 4.5 7.6 8 17 8s17-3.5 17-8V32l-17 7.5z" fill="#fff" fill-opacity=".85"/>'
     '<path d="M56 27.5V41" stroke="#fff" stroke-width="3" stroke-linecap="round"/>',
     "bag": '<path d="M16 24h32l3 28a4 4 0 0 1-4 4.4H17a4 4 0 0 1-4-4.4z" fill="#fff"/><path d="M24 28v-7a8 8 0 0 1 16 0v7" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'
@@ -807,10 +803,7 @@ def build_projects() -> None:
         # icon tile
         ix, iy = x + 32, y + 32
         s.add(f'<rect x="{ix}" y="{iy}" width="64" height="64" rx="18" fill="url(#pa{i})"/>')
-        if p["glyph"] == "letter":
-            s.add(s.text(ix + 32, iy + 46, "අ", "si6", 38, "#fff", anchor="middle"))
-        else:
-            s.add(f'<g transform="translate({ix} {iy})">{GLYPHS[p["glyph"]]}</g>')
+        s.add(f'<g transform="translate({ix} {iy})">{GLYPHS[p["glyph"]]}</g>')
         label, color = STATUS[p["status"]]
         s.add(pill(s, x + CW - 32, y + 49, label.upper(), color, anchor="end", dot=p["status"] != "planning"))
         s.add(s.text(x + 32, y + 152, p["name"], "sg7", 36, INK, ls=-0.5))
@@ -964,7 +957,7 @@ def build_footer() -> None:
     for i, (y0, amp, period, grad, _) in enumerate(layers):
         s.add(f'<path d="{wave(y0, amp, period)}" fill="url(#{grad})" class="wv{i}"/>')
     s.add(
-        s.text(W / 2, 84, "ස්තූතියි", "si6", 28, "url(#thanks)", anchor="middle"),
+        s.text(W / 2, 84, "SEE YOU IN THE COMMITS", "jb6", 15, "url(#thanks)", anchor="middle", ls=5),
         s.text(W / 2, 146, "Thanks for stopping by.", "sg7", 54, INK, anchor="middle", ls=-1.5),
         s.text(W / 2, 188, f"Crafted with precision by {FIRST} {LAST}  ·  Sri Lanka", "in4", 18, MUTED, anchor="middle"),
         "</g>",
