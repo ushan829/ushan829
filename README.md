@@ -61,6 +61,6 @@
 
 <br/><br/>
 
-<img src="assets/footer.svg" width="100%" alt="ස්තූතියි — Thanks for stopping by. Crafted with precision by Ushan Nethsara, Sri Lanka."/>
+<img src="assets/footer.svg" width="100%" alt="See you in the commits — Thanks for stopping by. Crafted with precision by Ushan Nethsara, Sri Lanka."/>
 
 </div>
